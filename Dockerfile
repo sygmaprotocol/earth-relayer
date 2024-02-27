@@ -17,5 +17,5 @@ COPY --from=builder /bridge ./
 RUN chmod +x ./bridge
 RUN mkdir -p /mount
 COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-
+LABEL org.opencontainers.image.source https://github.com/sygmaprotocol/earth-relayer
 ENTRYPOINT ["./bridge"]
